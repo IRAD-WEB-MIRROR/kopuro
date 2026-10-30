@@ -1,0 +1,250 @@
+/*
+Theme Name: NonProfit Lite
+Version: 1.3
+Description: Clean flat theme for charities and NGOs. Child theme "kopuro" (2015).
+*/
+:root{--ink:#2c3e50;--ink2:#34495e;--carrot:#e67e22;--carrot2:#d35400;--sea:#16a085;--cloud:#ecf0f1;--line:#dde3e6;--txt:#555f66}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--txt);font:14px/1.75 "Open Sans",Helvetica,Arial,sans-serif}
+a{color:var(--carrot);text-decoration:none}
+a:hover{color:var(--carrot2);text-decoration:underline}
+h1,h2,h3,h4,h5{font-family:"Roboto Slab",Georgia,serif;color:var(--ink);font-weight:700;line-height:1.3}
+h1{font-size:28px;margin:0 0 14px}
+h2{font-size:21px;margin:26px 0 10px}
+h3{font-size:17px;margin:20px 0 6px}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.right{float:right}
+/* top bar and header */
+.topbar{background:var(--ink);color:#bdc7cf;font-size:12px;line-height:36px;position:relative}
+.topbar span{margin-right:22px}
+.topbar .right{margin:0}
+.topbar .right a,.topbar .right b{color:#bdc7cf;margin-left:10px;font-weight:600}
+.topbar .right b{color:#fff}
+.topbar .soc{display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background:var(--ink2);color:#fff!important;font:700 11px/24px "Open Sans",sans-serif}
+#langnote{display:none;position:absolute;right:20px;top:36px;background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 3px 8px rgba(0,0,0,.12);padding:6px 12px;line-height:1.5;z-index:20}
+.head{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;box-shadow:0 2px 4px rgba(0,0,0,.04)}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;min-height:84px;padding-top:6px;padding-bottom:6px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.logo:hover{text-decoration:none}
+.logo b{display:block;font:700 30px/1 "Roboto Slab",Georgia,serif;color:var(--ink)}
+.logo i{display:block;font:400 12px "Open Sans",sans-serif;color:#8a959c;letter-spacing:1px;text-transform:uppercase;margin-top:4px;font-style:normal;white-space:nowrap}
+#menu{list-style:none;margin:0;padding:0;display:flex}
+#menu a{display:block;white-space:nowrap;padding:30px 9px 27px;color:var(--ink);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.4px;border-bottom:3px solid transparent}
+#menu a:hover,#menu a.on{color:var(--carrot);border-bottom-color:var(--carrot);text-decoration:none}
+#burger{display:none;background:none;border:0;padding:10px;cursor:pointer}
+#burger span{display:block;width:24px;height:3px;background:var(--ink);margin:4px 0}
+/* page title band */
+.band{background:var(--ink2) linear-gradient(90deg,var(--ink),var(--ink2));color:#fff;padding:30px 0 26px}
+.band h1{color:#fff;margin:0;font-size:30px}
+.crumbs{font-size:12px;color:#aab6c0;margin-top:4px}
+.crumbs a{color:#fff}
+/* slider */
+.slider{position:relative;height:400px;overflow:hidden;background:var(--ink)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .8s;color:#fff;display:flex;align-items:center}
+.slide.on{opacity:1;z-index:1}
+.slide .wrap{width:100%}
+.slide h2{color:#fff;font-size:40px;margin:8px 0 8px;max-width:640px}
+.slide p{font-size:17px;max-width:560px;margin:0 0 22px;color:#eef}
+.kick{display:inline-block;background:var(--carrot);color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px}
+.s1{background:#16a085 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cpath d='M300 330 Q450 120 600 330' fill='none' stroke='%23fff' stroke-opacity='.13' stroke-width='22'/%3E%3Cpath d='M300 330 H600' stroke='%23fff' stroke-opacity='.13' stroke-width='12'/%3E%3C/svg%3E") no-repeat right bottom}
+.s2{background:#2980b9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect x='170' y='60' width='170' height='230' fill='none' stroke='%23fff' stroke-opacity='.15' stroke-width='14'/%3E%3Cpath d='M205 130h100M205 175h100M205 220h60' stroke='%23fff' stroke-opacity='.15' stroke-width='12'/%3E%3C/svg%3E") no-repeat right center}
+.s3{background:#8e44ad url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='260' cy='200' r='110' fill='none' stroke='%23fff' stroke-opacity='.13' stroke-width='18'/%3E%3C/svg%3E") no-repeat right center}
+.dots{position:absolute;bottom:18px;left:0;right:0;text-align:center;z-index:3}
+.dots button{width:12px;height:12px;border-radius:50%;border:2px solid #fff;background:transparent;margin:0 4px;padding:0;cursor:pointer}
+.dots button.on{background:#fff}
+.btn{display:inline-block;background:var(--carrot);color:#fff;font-weight:700;padding:10px 24px;border-radius:3px;text-transform:uppercase;font-size:13px;letter-spacing:.5px;border-bottom:3px solid var(--carrot2)}
+.btn:hover{color:#fff;text-decoration:none;background:var(--carrot2)}
+.btn.line{background:transparent;color:var(--carrot);border:2px solid var(--carrot);padding:8px 20px;margin-right:6px}
+.btn.line:hover{background:var(--carrot);color:#fff}
+/* home sections */
+.tiles{background:var(--cloud);padding:34px 0}
+.tiles .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tile{background:#fff;text-align:center;padding:26px 18px 22px;color:var(--txt);border-bottom:3px solid transparent;transition:border-color .2s,transform .2s}
+.tile:hover{text-decoration:none;border-bottom-color:var(--carrot);transform:translateY(-3px)}
+.tile .ic{display:inline-flex;width:84px;height:84px;border-radius:50%;background:var(--sea);color:#fff;align-items:center;justify-content:center;margin-bottom:12px}
+.tile:nth-child(2) .ic{background:#2980b9}.tile:nth-child(3) .ic{background:var(--carrot)}.tile:nth-child(4) .ic{background:#8e44ad}
+.tile b{display:block;font:700 17px "Roboto Slab",Georgia,serif;color:var(--ink);margin-bottom:4px}
+.tile span:last-child{font-size:13px}
+.welcome{padding:40px 0}
+.welcome .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.welcome h2{margin-top:0;font-size:26px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.stats div{background:#fff;text-align:center;padding:20px 8px;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.stats b{display:block;font:700 38px/1.1 "Roboto Slab",Georgia,serif;color:var(--carrot)}
+.latest{padding:10px 0 30px}
+h2.sec{font-size:22px;position:relative;padding-bottom:10px;margin:24px 0 18px}
+h2.sec:after{content:"";position:absolute;left:0;bottom:0;width:50px;height:3px;background:var(--carrot)}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{display:flex;gap:14px;border:1px solid var(--line);padding:16px}
+.post .date{flex:none;width:54px;height:58px;background:var(--ink);color:#bdc7cf;text-align:center;font-size:11px;text-transform:uppercase;padding-top:6px}
+.post .date b{display:block;font:700 22px/1.1 "Roboto Slab",serif;color:#fff}
+.post h3{margin:0 0 2px;font-size:16px}
+.post h3 a{color:var(--ink)}
+.post p{margin:6px 0}
+.meta{font-size:11.5px;color:#9aa5ab;margin:0}
+.more{font-weight:600;font-size:13px}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.upcoming{list-style:none;margin:0 0 10px;padding:0}
+.upcoming li{display:flex;gap:14px;align-items:center;border-bottom:1px dashed var(--line);padding:9px 0}
+.upcoming .cd{flex:none;background:var(--sea);color:#fff;font-weight:700;font-size:12px;padding:4px 8px;min-width:84px;text-align:center}
+.upcoming small{display:block;color:#9aa5ab}
+.mlist{margin:0;padding-left:18px}
+.mlist li{margin-bottom:6px}
+.mlist a{font-weight:700}
+.partners{background:var(--cloud);padding:10px 0 34px}
+.plogos{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.plogos a{background:#fff;height:96px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);opacity:.85;transition:opacity .2s}
+.plogos a:hover{opacity:1}
+.plogos img{max-width:96%}
+/* inner pages */
+.cols{display:grid;grid-template-columns:1fr 290px;gap:44px;padding-top:34px;padding-bottom:40px}
+#main{min-width:0}
+.inner #main>h1:first-child{display:none}
+.byline{font-size:12px;color:#9aa5ab;margin:0 0 14px}
+#side .widget{margin-bottom:30px}
+#side h4{font-size:15px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--line);padding-bottom:8px;margin:0 0 12px;position:relative}
+#side h4:after{content:"";position:absolute;left:0;bottom:-2px;width:40px;height:2px;background:var(--carrot)}
+#side ul{list-style:none;margin:0;padding:0}
+.cat li{border-bottom:1px solid var(--line);padding:6px 0;font-size:13px;color:#9aa5ab}
+.cat a{color:var(--ink2)}
+.dl li{display:flex;gap:12px;align-items:center;padding:6px 0;font-size:13px;line-height:1.4}
+.dl b{flex:none;width:44px;background:var(--carrot);color:#fff;text-align:center;font:700 17px/1.1 "Roboto Slab",serif;padding:4px 0}
+.dl small{display:block;font:600 10px "Open Sans",sans-serif;text-transform:uppercase}
+.wsearch{display:flex}
+.wsearch input{flex:1;min-width:0;border:1px solid var(--line);padding:9px 10px;font:inherit}
+.wsearch button{border:0;background:var(--carrot);color:#fff;padding:0 14px;cursor:pointer}
+#side select{width:100%;padding:7px;border:1px solid var(--line);font:inherit;color:var(--txt)}
+.cover{display:block;width:150px;margin:0 auto 6px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+#side .c{text-align:center;font-size:12px;margin:0}
+.tags a{color:var(--ink2);margin-right:4px;line-height:1.6}
+table.t{border-collapse:collapse;width:100%;margin:10px 0 18px;font-size:13px}
+table.t th{background:var(--ink);color:#fff;text-align:left;padding:8px 10px;font-weight:600}
+table.t td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:top}
+table.t tr:nth-child(even) td{background:#f7f9fa}
+.note{background:#fef5e7;border-left:4px solid var(--carrot);padding:12px 16px;margin:16px 0}
+.box{background:var(--cloud);padding:14px 18px;margin:14px 0}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:10px;background:var(--cloud);color:var(--ink2);margin-left:4px;vertical-align:1px}
+.tag.open{background:#d5f5e3;color:#1e8449}.tag.closed{background:#eee;color:#999}.tag.soon{background:#fdebd0;color:#b9770e}
+.grant{border:1px solid var(--line);border-top:4px solid var(--sea);padding:14px 20px;margin:0 0 20px}
+.grant.closed{border-top-color:#bbb;opacity:.8}
+.grant h3{margin:0 0 6px}
+.facts{font-size:13px;background:var(--cloud);padding:8px 12px;margin:6px 0 10px}
+.facts b{color:var(--ink)}
+.filter{background:var(--cloud);padding:10px 14px;font-size:13px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.filter input,.filter select{border:1px solid var(--line);padding:6px;font:inherit}
+.mem{font-size:10.5px;color:#1e8449;font-weight:700;white-space:nowrap}
+.members{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:14px 0}
+.members a{display:block;border:1px solid var(--line);border-left:4px solid var(--carrot);padding:14px;color:var(--txt);font-size:13px}
+.members a:hover{text-decoration:none;background:#fdfaf6}
+.members a b{display:block;color:var(--ink);font:700 16px "Roboto Slab",serif}
+.issue{display:flex;gap:22px;align-items:flex-start;margin-bottom:10px}
+.issue img{width:170px;flex:none;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.bulletin h3{border-top:1px solid var(--line);padding-top:16px}
+.form{background:var(--cloud);padding:16px 20px}
+.form label{display:block;font-weight:600;font-size:13px;margin:10px 0 3px}
+.form input,.form select,.form textarea{width:100%;border:1px solid #cfd8dc;padding:8px;font:inherit;background:#fff}
+.form button,.news-sub button{background:var(--carrot);border:0;color:#fff;font-weight:700;padding:9px 22px;cursor:pointer;text-transform:uppercase;font-size:13px}
+.err{display:none;color:#c0392b;font-size:13px;margin:8px 0 0}
+.cal td.d{white-space:nowrap;font-weight:700;color:var(--ink)}
+.full{color:#c0392b;font-weight:700;font-size:11px}
+dl.faq dt{font:700 15px "Roboto Slab",serif;color:var(--ink);margin-top:16px}
+dl.faq dd{margin:4px 0 0}
+.toc{background:var(--cloud);padding:10px 20px;font-size:13px;margin-bottom:14px}
+.toc ol{margin:6px 0;padding-left:20px}
+.sig{font-style:italic}
+.upd{font-size:12px;color:#9aa5ab;margin-top:24px;border-top:1px solid var(--line);padding-top:10px}
+/* newsletter and footer */
+.news-sub{background:var(--carrot);color:#fff;padding:22px 0}
+.news-sub .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.news-sub b{display:block;font:700 20px "Roboto Slab",serif}
+.news-sub form{display:flex;flex-wrap:wrap}
+.news-sub input{border:0;padding:10px 12px;width:280px;font:inherit}
+.news-sub button{background:var(--ink)}
+.news-sub .err{flex-basis:100%;color:#fff;font-weight:600}
+.foot{background:#222d38;color:#8a98a3;font-size:13px}
+.fcols{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:30px;padding-top:34px;padding-bottom:20px}
+.foot h5{color:#fff;font-size:15px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.5px}
+.foot a{color:#bdc7cf}
+.copy{background:#1b242d;font-size:12px;padding:12px 0;color:#6c7a85}
+#totop{position:fixed;right:18px;bottom:18px;width:40px;height:40px;background:var(--carrot);color:#fff;text-align:center;line-height:40px;border-radius:3px;opacity:0;transition:opacity .3s;z-index:9}
+#totop.show{opacity:.85}
+#totop:hover{text-decoration:none;opacity:1}
+@media (max-width:1000px){
+  .tiles .wrap{grid-template-columns:repeat(2,1fr)}
+  .posts{grid-template-columns:1fr}
+  .plogos{grid-template-columns:repeat(3,1fr)}
+  #menu a{padding:30px 6px 27px;font-size:11.5px;letter-spacing:0}
+  .logo i{display:none}
+}
+@media (max-width:860px){
+  #burger{display:block}
+  .head nav{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);display:none}
+  .head nav.open{display:block}
+  #menu{flex-direction:column}
+  #menu a{padding:12px 20px;border-bottom:1px solid var(--line)}
+  .cols,.welcome .wrap,.twocol,.fcols{grid-template-columns:1fr}
+  .hide-m{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .topbar span{margin-right:10px}
+  .topbar .wrap>span:nth-child(2){display:none}
+  .logo img{width:170px;height:auto}
+  .slider{height:440px}
+  .slide h2{font-size:28px}
+  .tiles .wrap{grid-template-columns:1fr}
+  .plogos{grid-template-columns:repeat(2,1fr)}
+  .plogos img{max-width:100%}
+  .members{grid-template-columns:1fr}
+  .issue{flex-direction:column}
+  table.t{display:block;overflow-x:auto}
+  .news-sub input{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}html{scroll-behavior:auto}}
+/* member pages menu, home cards and member page frame (2016) */
+#menu li{position:relative}
+#menu .sub{display:none;position:absolute;left:0;top:100%;min-width:250px;background:#fff;list-style:none;margin:0;padding:6px 0;border-top:3px solid var(--carrot);box-shadow:0 6px 14px rgba(0,0,0,.12);z-index:30}
+#menu .has-sub:hover .sub,#menu .has-sub:focus-within .sub{display:block}
+#menu .sub a{padding:7px 18px;border:0;text-transform:none;letter-spacing:0;font-size:13px;font-weight:600}
+#menu .sub a:hover{background:var(--cloud)}
+#menu .has-sub>a:after{content:" \25BE";font-size:10px}
+.mem-sec{padding:6px 0 30px}
+.mem-sec .lead{margin:-6px 0 16px}
+.mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mcard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:5px solid var(--c);padding:16px 18px;color:var(--txt);font-size:13px;line-height:1.55}
+.mcard:hover{text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.mcard .mk{display:inline-flex;width:56px;height:56px;border-radius:50%;background:var(--c);align-items:center;justify-content:center;margin-bottom:10px}
+.mcard b{font:700 17px "Roboto Slab",serif;color:var(--ink);margin-bottom:4px}
+.mcard i{font-style:normal;font-weight:700;color:var(--c);margin-top:auto;padding-top:8px}
+.uk{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.uk img{box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.uk p{flex:1;min-width:180px;margin:0 0 10px}
+.mband{background:var(--c);color:#fff;padding:24px 0 20px}
+.mband .wrap{display:flex;gap:18px;align-items:center}
+.mband svg{flex:none}
+.mband h1{color:#fff;margin:2px 0 2px;font-size:30px}
+.mband span{opacity:.92;font-size:13px}
+.mband .crumbs{color:rgba(255,255,255,.75);margin:0}
+.mband .crumbs a{color:#fff}
+.mnav{background:#f4f6f7;border-bottom:1px solid var(--line)}
+.mnav .wrap{display:flex;flex-wrap:wrap;align-items:center}
+.mnav a{display:block;padding:11px 14px;color:var(--ink);font-weight:700;font-size:13px;border-bottom:3px solid transparent}
+.mnav a.on,.mnav a:hover{color:var(--c);border-bottom-color:var(--c);text-decoration:none}
+.mnav .back{margin-left:auto;font-weight:600;color:#7f8c8d}
+.mpage{padding-top:26px;padding-bottom:36px;max-width:900px}
+.mpage h1{color:var(--c)}
+.mpage h3{color:var(--c)}
+.mpage a{color:var(--c)}
+.mpage .tip{border-left:4px solid var(--c);background:#f6f7f4;padding:10px 14px;margin:14px 0}
+.mpage .tip.big{font-size:15px}
+.mpage td.bad{color:#c0392b;font-weight:700}
+.mpage .small{font-size:12.5px;color:#6c7a85}
+@media (max-width:860px){
+  #menu .sub{position:static;display:block;box-shadow:none;border:0;padding:0 0 6px 14px}
+  #menu .has-sub>a:after{content:""}
+  .mcards{grid-template-columns:1fr 1fr}
+  .mnav .back{margin-left:0}
+}
+@media (max-width:560px){.mcards{grid-template-columns:1fr}.mband h1{font-size:24px}.mband svg{width:44px;height:44px}}

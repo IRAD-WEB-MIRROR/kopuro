@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /uukboo-pdf/
+Sitemap: https://kopuro.org/sitemap.xml
